@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Euan McKay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #253348;
+      --accent: #3b82f6;
+      --accent-dim: #1d4ed8;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav .logo span { color: var(--accent); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--text); }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+
+    /* HERO */
+    #hero {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-text .eyebrow {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text .tagline {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text .location {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--accent-dim); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-photo {
+      flex-shrink: 0;
+    }
+
+    .hero-photo img,
+    .hero-photo .placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      display: block;
+    }
+
+    .hero-photo .placeholder {
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--text-muted);
+    }
+
+    /* DIVIDER */
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+
+    /* EXPERIENCE */
+    .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .timeline-company {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .timeline-company:hover { border-color: var(--accent); }
+
+    .company-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .company-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .company-type {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(59, 130, 246, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    .roles { padding: 0; }
+
+    .role {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+    }
+
+    .role:last-child { border-bottom: none; }
+
+    .role-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .role-location {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .role-dates {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* EDUCATION */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .edu-card:hover { border-color: var(--accent); }
+
+    .edu-institution {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .edu-degree {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-years {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* CONTACT */
+    #contact {
+      text-align: center;
+      padding-bottom: 6rem;
+    }
+
+    #contact p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    #contact .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      #hero { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+      .hero-buttons { justify-content: center; }
+      .hero-photo img, .hero-photo .placeholder { width: 140px; height: 140px; }
+      .company-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .role { flex-direction: column; gap: 0.25rem; }
+      .role-dates { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#hero" class="logo">Euan <span>McKay</span></a>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-text">
+      <p class="eyebrow">MBA · Venture · Private Equity</p>
+      <h1>Euan McKay</h1>
+      <p class="tagline">MBA Candidate at Columbia Business School</p>
+      <p class="location">📍 New York City Metropolitan Area</p>
+      <div class="hero-buttons">
+        <a href="mailto:euanmckay95@hotmail.com" class="btn btn-primary">Get in touch</a>
+        <a href="https://www.linkedin.com/in/euanmckay-0190a0124" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img
+        src="assets/headshot.jpg"
+        alt="Euan McKay"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="placeholder" style="display:none;">EM</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-company">
+        <div class="company-header">
+          <span class="company-name">Columbia Venture Fellows</span>
+          <span class="company-type">Venture</span>
+        </div>
+        <div class="roles">
+          <div class="role">
+            <div>
+              <p class="role-title">Venture Fellow</p>
+              <p class="role-location">New York, NY</p>
+            </div>
+            <p class="role-dates">Nov 2025 – Present</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-company">
+        <div class="company-header">
+          <span class="company-name">37 Angels</span>
+          <span class="company-type">Angel Investing</span>
+        </div>
+        <div class="roles">
+          <div class="role">
+            <div>
+              <p class="role-title">Investment Associate</p>
+              <p class="role-location">New York, NY</p>
+            </div>
+            <p class="role-dates">Sep 2025 – Mar 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-company">
+        <div class="company-header">
+          <span class="company-name">LvlUp Ventures</span>
+          <span class="company-type">Venture</span>
+        </div>
+        <div class="roles">
+          <div class="role">
+            <div>
+              <p class="role-title">Senior Venture Scout</p>
+              <p class="role-location">New York, NY</p>
+            </div>
+            <p class="role-dates">Jul 2025 – Dec 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-company">
+        <div class="company-header">
+          <span class="company-name">LEO Impact Fund</span>
+          <span class="company-type">Impact Investing</span>
+        </div>
+        <div class="roles">
+          <div class="role">
+            <div>
+              <p class="role-title">VP, North America &amp; Europe</p>
+              <p class="role-location">New York, NY</p>
+            </div>
+            <p class="role-dates">May 2025 – Dec 2025</p>
+          </div>
+          <div class="role">
+            <div>
+              <p class="role-title">Investment Associate</p>
+              <p class="role-location">New York, NY</p>
+            </div>
+            <p class="role-dates">Jan 2025 – Apr 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-company">
+        <div class="company-header">
+          <span class="company-name">Strategy&amp;</span>
+          <span class="company-type">Consulting · PE</span>
+        </div>
+        <div class="roles">
+          <div class="role">
+            <div>
+              <p class="role-title">Engagement Manager | Deals (Private Equity Group)</p>
+              <p class="role-location">London, United Kingdom</p>
+            </div>
+            <p class="role-dates">Jan 2024 – Dec 2024</p>
+          </div>
+          <div class="role">
+            <div>
+              <p class="role-title">Senior Associate | Deals (Private Equity Group)</p>
+              <p class="role-location">London, United Kingdom</p>
+            </div>
+            <p class="role-dates">Apr 2022 – Dec 2023</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <p class="section-label">Academic</p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <p class="edu-institution">Columbia Business School</p>
+        <p class="edu-degree">MBA</p>
+        <p class="edu-years">Jan 2025</p>
+      </div>
+      <div class="edu-card">
+        <p class="edu-institution">ICAS</p>
+        <p class="edu-degree">Chartered Accountant</p>
+        <p class="edu-years">2017 – 2020</p>
+      </div>
+      <div class="edu-card">
+        <p class="edu-institution">University of Glasgow</p>
+        <p class="edu-degree">MA (Hons), Economics</p>
+        <p class="edu-years">2013 – 2017</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Get in touch</p>
+    <h2 class="section-title">Let's Connect</h2>
+    <p>Open to conversations about venture, private equity, and new opportunities.</p>
+    <div class="contact-links">
+      <a href="mailto:euanmckay95@hotmail.com" class="btn btn-primary">euanmckay95@hotmail.com</a>
+      <a href="https://www.linkedin.com/in/euanmckay-0190a0124" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn Profile</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Euan McKay
+  </footer>
+
+</body>
+</html>
