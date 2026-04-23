@@ -223,14 +223,20 @@
 
     .role {
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      flex-direction: column;
       padding: 1rem 1.5rem;
       border-bottom: 1px solid var(--border);
-      gap: 1rem;
+      gap: 0.6rem;
     }
 
     .role:last-child { border-bottom: none; }
+
+    .role-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
     .role-title {
       font-size: 0.95rem;
@@ -249,6 +255,30 @@
       white-space: nowrap;
       text-align: right;
       flex-shrink: 0;
+    }
+
+    .role-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .role-bullets li {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .role-bullets li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
     }
 
     /* EDUCATION */
@@ -382,7 +412,7 @@
       .hero-buttons { justify-content: center; }
       .hero-photo img, .hero-photo .placeholder { width: 140px; height: 140px; }
       .company-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      .role { flex-direction: column; gap: 0.25rem; }
+      .role-header { flex-direction: column; gap: 0.25rem; }
       .role-dates { text-align: left; }
     }
   </style>
@@ -434,11 +464,16 @@
         </div>
         <div class="roles">
           <div class="role">
-            <div>
-              <p class="role-title">Venture Fellow</p>
-              <p class="role-location">New York, NY</p>
+            <div class="role-header">
+              <div>
+                <p class="role-title">MBA Fellow</p>
+                <p class="role-location">New York, NY</p>
+              </div>
+              <p class="role-dates">Nov 2025 – Present</p>
             </div>
-            <p class="role-dates">Nov 2025 – Present</p>
+            <ul class="role-bullets">
+              <li>Selected as 1 of 15 fellows (100+ applicants) to develop a future-of-work investment thesis with Torch Capital, chosen for ability to operate independently and drive work with minimal oversight</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -450,11 +485,17 @@
         </div>
         <div class="roles">
           <div class="role">
-            <div>
-              <p class="role-title">Investment Associate</p>
-              <p class="role-location">New York, NY</p>
+            <div class="role-header">
+              <div>
+                <p class="role-title">Investment Associate</p>
+                <p class="role-location">New York, NY</p>
+              </div>
+              <p class="role-dates">Sep 2025 – Mar 2026</p>
             </div>
-            <p class="role-dates">Sep 2025 – Mar 2026</p>
+            <ul class="role-bullets">
+              <li>Sourced and evaluated 200+ seed-stage startups, led 40+ founder calls, and formed clear investment recommendations on whether to advance opportunities</li>
+              <li>Led diligence teams in producing detailed investment memos to inform investment decisions</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -466,11 +507,16 @@
         </div>
         <div class="roles">
           <div class="role">
-            <div>
-              <p class="role-title">Senior Venture Scout</p>
-              <p class="role-location">New York, NY</p>
+            <div class="role-header">
+              <div>
+                <p class="role-title">Senior Venture Scout</p>
+                <p class="role-location">New York, NY</p>
+              </div>
+              <p class="role-dates">Jul 2025 – Dec 2025</p>
             </div>
-            <p class="role-dates">Jul 2025 – Dec 2025</p>
+            <ul class="role-bullets">
+              <li>Sourced early-stage startups for referral to LvlUp's investment team while building founder relationships across the early-stage VC ecosystem</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -482,18 +528,46 @@
         </div>
         <div class="roles">
           <div class="role">
-            <div>
-              <p class="role-title">VP, North America &amp; Europe</p>
-              <p class="role-location">New York, NY</p>
+            <div class="role-header">
+              <div>
+                <p class="role-title">VP, North America &amp; Europe</p>
+                <p class="role-location">New York, NY</p>
+              </div>
+              <p class="role-dates">May 2025 – Dec 2025</p>
             </div>
-            <p class="role-dates">May 2025 – Dec 2025</p>
+            <ul class="role-bullets">
+              <li>Oversaw deal sourcing, due diligence and investment committee preparation for impact startups at Columbia Business School's student-run impact investing fund; two opportunities advanced to Investment Committee review</li>
+            </ul>
           </div>
           <div class="role">
-            <div>
-              <p class="role-title">Investment Associate</p>
-              <p class="role-location">New York, NY</p>
+            <div class="role-header">
+              <div>
+                <p class="role-title">Investment Associate</p>
+                <p class="role-location">New York, NY</p>
+              </div>
+              <p class="role-dates">Jan 2025 – Apr 2025</p>
             </div>
-            <p class="role-dates">Jan 2025 – Apr 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-company">
+        <div class="company-header">
+          <span class="company-name">Medi8</span>
+          <span class="company-type">Founder</span>
+        </div>
+        <div class="roles">
+          <div class="role">
+            <div class="role-header">
+              <div>
+                <p class="role-title">Co-founder &amp; Chief Product Officer</p>
+                <p class="role-location">New York, NY</p>
+              </div>
+              <p class="role-dates">2025</p>
+            </div>
+            <ul class="role-bullets">
+              <li>Spearheaded product vision, MVP development, and customer discovery (surveyed 100+ and held 20+ interviews) for a peer-to-peer platform empowering families navigating divorce by connecting them to trained individuals with lived experience</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -505,18 +579,32 @@
         </div>
         <div class="roles">
           <div class="role">
-            <div>
-              <p class="role-title">Engagement Manager | Deals (Private Equity Group)</p>
-              <p class="role-location">London, United Kingdom</p>
+            <div class="role-header">
+              <div>
+                <p class="role-title">Engagement Manager | Deals (Private Equity Group)</p>
+                <p class="role-location">London, United Kingdom</p>
+              </div>
+              <p class="role-dates">Jan 2024 – Dec 2024</p>
             </div>
-            <p class="role-dates">Jan 2024 – Dec 2024</p>
+            <ul class="role-bullets">
+              <li>Ran the commercial due diligence of a sports marketing agency, delivering insights that underpinned the client's £250m acquisition</li>
+              <li>Selected as a high performer to lead strategy development within PwC's Palantir Alliance team via an internal secondment</li>
+              <li>Recalled from secondment ahead of schedule to successfully manage a complex strategy project for a priority client</li>
+            </ul>
           </div>
           <div class="role">
-            <div>
-              <p class="role-title">Senior Associate | Deals (Private Equity Group)</p>
-              <p class="role-location">London, United Kingdom</p>
+            <div class="role-header">
+              <div>
+                <p class="role-title">Senior Associate | Deals (Private Equity Group)</p>
+                <p class="role-location">London, United Kingdom</p>
+              </div>
+              <p class="role-dates">Apr 2022 – Dec 2023</p>
             </div>
-            <p class="role-dates">Apr 2022 – Dec 2023</p>
+            <ul class="role-bullets">
+              <li>Led Strategy&amp;'s annual Media thought leadership exercise as a Senior Associate, driving a £250k strategy project win</li>
+              <li>Owned an in-depth business plan analysis and regulatory outlook to facilitate a £100m+ debt refinancing</li>
+              <li>Delivered an extensive European market outlook highlighting growth opportunities to inform a PLC's expansion plans</li>
+            </ul>
           </div>
         </div>
       </div>
