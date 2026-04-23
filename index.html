@@ -181,6 +181,14 @@
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 680px;
       margin-bottom: 2.5rem;
     }
 
@@ -389,6 +397,14 @@
     .writing-date {
       font-size: 0.82rem;
       color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .writing-hook {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      font-style: italic;
     }
 
     .writing-arrow {
@@ -447,9 +463,9 @@
   <nav>
     <a href="#hero" class="logo">Euan <span>McKay</span></a>
     <ul>
+      <li><a href="#writing">How I Think</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#writing">Thought Pieces</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -476,10 +492,50 @@
     </div>
   </section>
 
+  <!-- HOW I THINK -->
+  <section id="writing">
+    <p class="section-label">How I Think</p>
+    <h2 class="section-title">How I Think</h2>
+    <div class="writing-grid">
+
+      <a href="assets/judgment-layer.pdf" target="_blank" rel="noopener" class="writing-card">
+        <div class="writing-card-body">
+          <span class="writing-tag">Investment Thesis</span>
+          <p class="writing-title">The Judgment Layer</p>
+          <p class="writing-date">Spring 2026</p>
+          <p class="writing-hook">AI is removing the people who used to build judgment, but not the people who are liable for it.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a href="assets/agent-native-procurement.pdf" target="_blank" rel="noopener" class="writing-card">
+        <div class="writing-card-body">
+          <span class="writing-tag">Investment Thesis</span>
+          <p class="writing-title">Agent-Native Procurement</p>
+          <p class="writing-date">Spring 2026</p>
+          <p class="writing-hook">AI agents are shifting from advisory tools to delegated economic actors — procurement is the first enterprise workflow they'll own end-to-end.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a href="assets/thin-companies.pdf" target="_blank" rel="noopener" class="writing-card">
+        <div class="writing-card-body">
+          <span class="writing-tag">Investment Thesis</span>
+          <p class="writing-title">Thin Companies</p>
+          <p class="writing-date">Summer 2025</p>
+          <p class="writing-hook">The next generation of durable software companies will scale to millions in ARR with fewer than 20 people — and that changes how you should underwrite them.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience">
     <p class="section-label">Career</p>
     <h2 class="section-title">Experience</h2>
+    <p class="section-intro">I spend most of my time thinking about and working on interesting problems. That's taken me from strategy to venture to building small projects. I'm looking to work closely with the people building and shaping companies early on.</p>
     <div class="timeline">
 
       <div class="timeline-company">
@@ -682,42 +738,6 @@
           <li>Adam Smith Scholar Award of Excellence</li>
         </ul>
       </div>
-
-    </div>
-  </section>
-
-  <!-- THOUGHT PIECES -->
-  <section id="writing">
-    <p class="section-label">Writing</p>
-    <h2 class="section-title">Thought Pieces</h2>
-    <div class="writing-grid">
-
-      <a href="assets/judgment-layer.pdf" target="_blank" rel="noopener" class="writing-card">
-        <div class="writing-card-body">
-          <span class="writing-tag">Investment Thesis</span>
-          <p class="writing-title">The Judgment Layer</p>
-          <p class="writing-date">Spring 2026</p>
-        </div>
-        <span class="writing-arrow">↗</span>
-      </a>
-
-      <a href="assets/agent-native-procurement.pdf" target="_blank" rel="noopener" class="writing-card">
-        <div class="writing-card-body">
-          <span class="writing-tag">Investment Thesis</span>
-          <p class="writing-title">Agent-Native Procurement</p>
-          <p class="writing-date">Spring 2026</p>
-        </div>
-        <span class="writing-arrow">↗</span>
-      </a>
-
-      <a href="assets/thin-companies.pdf" target="_blank" rel="noopener" class="writing-card">
-        <div class="writing-card-body">
-          <span class="writing-tag">Investment Thesis</span>
-          <p class="writing-title">Thin Companies</p>
-          <p class="writing-date">Summer 2025</p>
-        </div>
-        <span class="writing-arrow">↗</span>
-      </a>
 
     </div>
   </section>
