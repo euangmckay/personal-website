@@ -286,6 +286,68 @@
       font-weight: 500;
     }
 
+    /* THOUGHT PIECES */
+    .writing-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .writing-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .writing-card:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hover);
+    }
+
+    .writing-card-body { flex: 1; }
+
+    .writing-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(59, 130, 246, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+
+    .writing-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .writing-date {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .writing-arrow {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .writing-card:hover .writing-arrow {
+      color: var(--accent);
+      transform: translateX(3px);
+    }
+
     /* CONTACT */
     #contact {
       text-align: center;
@@ -332,6 +394,7 @@
     <ul>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#writing">Thought Pieces</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -481,6 +544,42 @@
         <p class="edu-degree">MA (Hons), Economics</p>
         <p class="edu-years">2013 – 2017</p>
       </div>
+    </div>
+  </section>
+
+  <!-- THOUGHT PIECES -->
+  <section id="writing">
+    <p class="section-label">Writing</p>
+    <h2 class="section-title">Thought Pieces</h2>
+    <div class="writing-grid">
+
+      <a href="assets/judgment-layer.pdf" target="_blank" rel="noopener" class="writing-card">
+        <div class="writing-card-body">
+          <span class="writing-tag">Investment Thesis</span>
+          <p class="writing-title">The Judgment Layer</p>
+          <p class="writing-date">Spring 2026</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a href="assets/agent-native-procurement.pdf" target="_blank" rel="noopener" class="writing-card">
+        <div class="writing-card-body">
+          <span class="writing-tag">Investment Thesis</span>
+          <p class="writing-title">Agent-Native Procurement</p>
+          <p class="writing-date">Spring 2026</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a href="assets/thin-companies.pdf" target="_blank" rel="noopener" class="writing-card">
+        <div class="writing-card-body">
+          <span class="writing-tag">Investment Thesis</span>
+          <p class="writing-title">Thin Companies</p>
+          <p class="writing-date">Summer 2025</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
     </div>
   </section>
 
