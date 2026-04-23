@@ -314,6 +314,31 @@
       font-size: 0.8rem;
       color: var(--accent);
       font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .edu-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .edu-highlights li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .edu-highlights li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
     }
 
     /* THOUGHT PIECES */
@@ -530,23 +555,14 @@
           <div class="role">
             <div class="role-header">
               <div>
-                <p class="role-title">VP, North America &amp; Europe</p>
+                <p class="role-title">Investment Associate → VP, North America &amp; Europe</p>
                 <p class="role-location">New York, NY</p>
               </div>
-              <p class="role-dates">May 2025 – Dec 2025</p>
+              <p class="role-dates">Jan 2025 – Dec 2025</p>
             </div>
             <ul class="role-bullets">
               <li>Oversaw deal sourcing, due diligence and investment committee preparation for impact startups at Columbia Business School's student-run impact investing fund; two opportunities advanced to Investment Committee review</li>
             </ul>
-          </div>
-          <div class="role">
-            <div class="role-header">
-              <div>
-                <p class="role-title">Investment Associate</p>
-                <p class="role-location">New York, NY</p>
-              </div>
-              <p class="role-dates">Jan 2025 – Apr 2025</p>
-            </div>
           </div>
         </div>
       </div>
@@ -618,7 +634,7 @@
           <div class="role">
             <div class="role-header">
               <div>
-                <p class="role-title">Manager | Tax &amp; Transfer Pricing</p>
+                <p class="role-title">Associate → Manager | Tax &amp; Transfer Pricing</p>
                 <p class="role-location">Edinburgh &amp; London, United Kingdom</p>
               </div>
               <p class="role-dates">2017 – 2022</p>
@@ -644,16 +660,26 @@
         <p class="edu-institution">Columbia Business School</p>
         <p class="edu-degree">MBA</p>
         <p class="edu-years">Jan 2025</p>
+        <ul class="edu-highlights">
+          <li>Dean's List every term</li>
+        </ul>
       </div>
       <div class="edu-card">
         <p class="edu-institution">ICAS</p>
         <p class="edu-degree">Chartered Accountant</p>
         <p class="edu-years">2017 – 2020</p>
+        <ul class="edu-highlights">
+          <li>First-time passes on every exam</li>
+        </ul>
       </div>
       <div class="edu-card">
         <p class="edu-institution">University of Glasgow</p>
         <p class="edu-degree">MA (Hons), Economics</p>
         <p class="edu-years">2013 – 2017</p>
+        <ul class="edu-highlights">
+          <li>First Class Honours</li>
+          <li>Adam Smith Scholar Award of Excellence</li>
+        </ul>
       </div>
 
     </div>
